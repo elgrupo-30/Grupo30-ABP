@@ -15,6 +15,13 @@ Representa a un usuario del sistema con sus datos personales y funcionalidades d
 | `rol`            | str    | pública     | Rol del usuario (admin/usuario)          |
 | `fecha_registro` | str    | pública     | Fecha de registro en formato ISO 8601    |
 
+
+**Nota sobre `_contraseña`:**
+El guión bajo indica que es un atributo protegido (convención Python).  
+No debe accederse directamente, sino mediante los métodos:
+- `verificar_contraseña()`
+- `cambiar_contraseña()`  
+Esto encapsula la lógica de manejo de contraseñas y garantiza la seguridad de los datos sensibles.
 ### Métodos
 
 #### `verificar_contraseña(contraseña: str) -> bool`
