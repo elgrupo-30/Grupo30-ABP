@@ -18,6 +18,15 @@
   - `nombre`: Nombre completo del usuario
   - `email`: Correo electrónico (único)
   - `contraseña_hash`: Hash de la contraseña (se asume algoritmo SHA-256)
+     La columna contraseña_hash almacena contraseñas hasheadas con SHA-256
+    
+     Ejemplo: 'admin123' → '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'
+    
+     Se utiliza este algoritmo porque:
+    
+      1. Es resistente a colisiones
+      2. Genera un hash de 64 caracteres (256 bits)
+      3. Es ampliamente utilizado y considerado seguro
   - `fecha_registro`: Fecha de registro del usuario
   - `rol_id`: Referencia al rol del usuario (FK)
 - **Validaciones**:
